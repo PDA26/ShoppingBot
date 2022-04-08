@@ -21,11 +21,21 @@ bs = BeautifulSoup(html, 'html.parser')
 #traversal
 #print(bs.head.contents[0])
 
-#search
-# find_all()
-t_list = bs.find_all('a')
-print(t_list)
+# #search
+# # find_all()
+# t_list = bs.find_all('a')
+# print(t_list)
+#
+# #regex  search()
+# t_list = bs.find_all(re.compile('a'))
+# print(t_list)
 
-#regex  search()
-t_list = bs.find_all(re.compile('a'))
+# t_list = bs.find_all(class_=True)
+# print(t_list)
+
+# t_list = bs.select('.mnav') #tag
+# t_list = bs.select('#u1') # id
+# t_list = bs.select('a[class="toindex"]') # attrs
+# t_list = bs.select('head > title') # hierachy
+t_list = bs.select('.mnav ~ .bri') # siblings
 print(t_list)
